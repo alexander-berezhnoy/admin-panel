@@ -110,7 +110,7 @@ const TodoList = () => {
       <ScrollArea className="h-[400px] mt-4">
         <div className="flex flex-col gap-4">
           {todoListData.map((todoItem) => (
-            <Card className="p-4">
+            <Card className="p-4" key={todoItem.id}>
               <div className="flex items-center gap-4">
                 <Checkbox id={todoItem.id} defaultChecked={todoItem.checked} />
                 <Label
