@@ -1,11 +1,3 @@
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
 import CardList from "@/components/CardList";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -14,6 +6,8 @@ import SectionCard from "@/components/SectionCard";
 import UserBreadcrumbs from "@/components/UserBreadcrumbs";
 import UserBadges from "@/components/UserBadges";
 import UserInformation from "@/components/UserInformation";
+import AppLineChart from "@/components/AppLineChart";
+import UserCard from "@/components/UserCard";
 
 export type User = {
   id: string;
@@ -30,7 +24,7 @@ export type User = {
 
 const user: User = {
   id: "1",
-  name: "John Doe",
+  name: "Oleksandr Berezhnyi",
   username: "john.doe",
   email: "john.doe@gmail.com",
   phone: "+123 45 67",
@@ -68,8 +62,12 @@ const SingleUserPage = () => {
           </SectionCard>
         </div>
         <div className="w-full xl:w-2/3 space-y-6">
-          <SectionCard>user card container</SectionCard>
-          <SectionCard>chart container</SectionCard>
+          <SectionCard className="space-y-2">
+            <UserCard />
+          </SectionCard>
+          <SectionCard title="User Activity">
+            <AppLineChart />
+          </SectionCard>
         </div>
       </div>
     </div>
